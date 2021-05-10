@@ -4,8 +4,8 @@ daily_df = pd.read_csv("data/daily_reports.csv")
 totals_df = daily_df[["Confirmed", "Deaths", "Recovered"]].sum().reset_index(name="count")
 totals_df = totals_df.rename(columns={"index": "condition"})
 
-conutries_df = daily_df[["Country_Region", "Confirmed", "Deaths", "Recovered"]]
-conutries_df = conutries_df.groupby("Country_Region").sum().reset_index()
+countries_df = daily_df[["Country_Region", "Confirmed", "Deaths", "Recovered"]]
+countries_df = countries_df.groupby("Country_Region").sum().reset_index()
 
 conditions = ["confirmed", "deaths", "recovered"]
 
